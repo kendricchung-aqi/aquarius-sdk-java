@@ -1,6 +1,6 @@
-// Date: 2026-09-11T17:14:52.2207350-07:00
-// Base URL: https://test.aqstest.com/api/swagger.json
-// Source: AQUARIUS Samples API (2026.8.8294)
+// Date: 2026-09-14T14:24:32.2879227-07:00
+// Base URL: https://aqts-connector-integration-test-first-sync.aqstest.com/api/swagger.json
+// Source: AQUARIUS Samples API (2026.8.8297)
 
 package com.aquaticinformatics.aquarius.sdk.samples;
 
@@ -14,7 +14,7 @@ public class ServiceModel
 {
     public static class Current
     {
-        public static final AquariusServerVersion Version = AquariusServerVersion.Create("2026.8.8294");
+        public static final AquariusServerVersion Version = AquariusServerVersion.Create("2026.8.8297");
     }
 
     @Route(Path="/v1/accessgroups", Verbs="GET")
@@ -2757,20 +2757,6 @@ public class ServiceModel
         public Object getResponseType() {{ return responseType; }}
     }
 
-    @Route(Path="/v1/queues/backgroundprocessor", Verbs="GET")
-    public static class GetBackgroundProcessorQueueCount implements IReturn<QueueCountDto>
-    {
-        private static Object responseType = QueueCountDto.class;
-        public Object getResponseType() {{ return responseType; }}
-    }
-
-    @Route(Path="/v1/queues/importprocessor", Verbs="GET")
-    public static class GetLabReportProcessorQueueCount implements IReturn<QueueCountDto>
-    {
-        private static Object responseType = QueueCountDto.class;
-        public Object getResponseType() {{ return responseType; }}
-    }
-
     @Route(Path="/v1/resultgrades", Verbs="GET")
     public static class GetResultGrades implements IReturn<SearchResultResultGrade>
     {
@@ -5023,7 +5009,6 @@ public class ServiceModel
         public String FileType = null;
         public String TimeZoneOffset = null;
         public Boolean LinkFieldVisitsForNewObservations = null;
-        public String ImportTemplateId = null;
 
         public String getFileType() { return FileType; }
         public PostObservationImportV2 setFileType(String value) { this.FileType = value; return this; }
@@ -5031,8 +5016,6 @@ public class ServiceModel
         public PostObservationImportV2 setTimeZoneOffset(String value) { this.TimeZoneOffset = value; return this; }
         public Boolean getLinkFieldVisitsForNewObservations() { return LinkFieldVisitsForNewObservations; }
         public PostObservationImportV2 setLinkFieldVisitsForNewObservations(Boolean value) { this.LinkFieldVisitsForNewObservations = value; return this; }
-        public String getImportTemplateId() { return ImportTemplateId; }
-        public PostObservationImportV2 setImportTemplateId(String value) { this.ImportTemplateId = value; return this; }
     }
 
     @Route(Path="/v2/observationimports/{id}/result", Verbs="GET")
@@ -5063,7 +5046,6 @@ public class ServiceModel
         public String FileType = null;
         public String TimeZoneOffset = null;
         public Boolean LinkFieldVisitsForNewObservations = null;
-        public String ImportTemplateId = null;
 
         public String getFileType() { return FileType; }
         public PostObservationsDryRunV2 setFileType(String value) { this.FileType = value; return this; }
@@ -5071,8 +5053,6 @@ public class ServiceModel
         public PostObservationsDryRunV2 setTimeZoneOffset(String value) { this.TimeZoneOffset = value; return this; }
         public Boolean getLinkFieldVisitsForNewObservations() { return LinkFieldVisitsForNewObservations; }
         public PostObservationsDryRunV2 setLinkFieldVisitsForNewObservations(Boolean value) { this.LinkFieldVisitsForNewObservations = value; return this; }
-        public String getImportTemplateId() { return ImportTemplateId; }
-        public PostObservationsDryRunV2 setImportTemplateId(String value) { this.ImportTemplateId = value; return this; }
     }
 
     @DataContract
@@ -8035,14 +8015,11 @@ public class ServiceModel
     public static class ImportChangeItem
     {
         public String PropertyName = null;
-        public String DisplayPropertyName = null;
         public Object Left = null;
         public Object Right = null;
 
         public String getPropertyName() { return PropertyName; }
         public ImportChangeItem setPropertyName(String value) { this.PropertyName = value; return this; }
-        public String getDisplayPropertyName() { return DisplayPropertyName; }
-        public ImportChangeItem setDisplayPropertyName(String value) { this.DisplayPropertyName = value; return this; }
         public Object getLeft() { return Left; }
         public ImportChangeItem setLeft(Object value) { this.Left = value; return this; }
         public Object getRight() { return Right; }
@@ -8580,16 +8557,14 @@ public class ServiceModel
     public static class InputPart
     {
         public String FileName = null;
-        public Object Headers = null;
         public InputStream Body = null;
         public MediaType MediaType = null;
         public String BodyAsString = null;
         public Boolean ContentTypeFromMessage = null;
+        public Object Headers = null;
 
         public String getFileName() { return FileName; }
         public InputPart setFileName(String value) { this.FileName = value; return this; }
-        public Object getHeaders() { return Headers; }
-        public InputPart setHeaders(Object value) { this.Headers = value; return this; }
         public InputStream getBody() { return Body; }
         public InputPart setBody(InputStream value) { this.Body = value; return this; }
         public MediaType getMediaType() { return MediaType; }
@@ -8598,6 +8573,8 @@ public class ServiceModel
         public InputPart setBodyAsString(String value) { this.BodyAsString = value; return this; }
         public Boolean getContentTypeFromMessage() { return ContentTypeFromMessage; }
         public InputPart setContentTypeFromMessage(Boolean value) { this.ContentTypeFromMessage = value; return this; }
+        public Object getHeaders() { return Headers; }
+        public InputPart setHeaders(Object value) { this.Headers = value; return this; }
     }
 
     public static class InputStream
@@ -9493,14 +9470,6 @@ public class ServiceModel
         public Quantity setValue(Double value) { this.Value = value; return this; }
         public Unit getUnit() { return Unit; }
         public Quantity setUnit(Unit value) { this.Unit = value; return this; }
-    }
-
-    public static class QueueCountDto
-    {
-        public Integer QueueCount = null;
-
-        public Integer getQueueCount() { return QueueCount; }
-        public QueueCountDto setQueueCount(Integer value) { this.QueueCount = value; return this; }
     }
 
     public static class ResultDetectionCondition
