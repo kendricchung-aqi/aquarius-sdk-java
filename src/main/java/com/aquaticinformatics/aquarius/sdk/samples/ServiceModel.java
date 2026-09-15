@@ -1,6 +1,6 @@
 // Date: 2026-09-14T14:24:32.2879227-07:00
 // Base URL: https://aqts-connector-integration-test-first-sync.aqstest.com/api/swagger.json
-// Source: AQUARIUS Samples API (2026.8.8297)
+// Source: AQUARIUS Samples API (2026.9.8300)
 
 package com.aquaticinformatics.aquarius.sdk.samples;
 
@@ -14,7 +14,7 @@ public class ServiceModel
 {
     public static class Current
     {
-        public static final AquariusServerVersion Version = AquariusServerVersion.Create("2026.8.8297");
+        public static final AquariusServerVersion Version = AquariusServerVersion.Create("2026.9.8300");
     }
 
     @Route(Path="/v1/accessgroups", Verbs="GET")
