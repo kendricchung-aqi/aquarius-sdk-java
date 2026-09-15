@@ -4,7 +4,7 @@ This page highlights some changes in the SDK.
 
 Not all changes will be listed, but you can always [compare by version tags](https://github.com/AquaticInformatics/aquarius-sdk-java/compare/v26.1.0...v26.2.0) to see the full source code difference.
 
-### 26.2.1
+### 26.2.2
 - Updated the service models for the AQUARIUS Samples 2026.9 release.
 
 ### 26.2.0
